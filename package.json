@@ -21,7 +21,6 @@
     "@inquirer/prompts": "^4.0.0",
     "boxen": "^5.1.2",
     "chalk": "4.1.2",
-    "clui": "^0.3.6",
     "commander": "^12.0.0",
     "ejs": "^3.1.9",
     "fs-extra": "^11.2.0",
