@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const { exec } = require('child_process')
+const { exec } = require('child_process');
+const pkgVersion = require('./package.json')
 const { program } = require('commander');
 const { logger } = require('./utils/logger');
 const { select, confirm, input, checkbox } = require('@inquirer/prompts');
@@ -18,7 +19,7 @@ Spinner = CLI.Spinner;
 
 const lerna_spinner = new Spinner('Installing lerna...  ', ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']);
 
-program.version("0.0.1").description("Material UI CLI");
+program.version(pkgVersion.version).description("Material UI CLI");
 
 program
     .command("theme-init")
