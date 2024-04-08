@@ -1,9 +1,6 @@
 const { spawn } = require('child_process');
 const { logger } = require('../utils/logger')
-const CLI = require('clui');
 const { installMUICommand } = require('../utils/constants')
-
-Spinner = CLI.Spinner;
 
 function runInstall(package, next) {
     logger.success(`Installing material UI using ${package}...\n`);
