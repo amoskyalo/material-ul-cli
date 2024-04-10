@@ -3,15 +3,13 @@ const { componentsCategories } = require('../utils/constants');
 const { logger } = require('../utils/logger');
 const { exec } = require('child_process');
 const getNextThemeConfigFile = require('../components/Theme/nextThemeConfig');
-const CLI = require('clui');
+const ora = require('ora');
 const path = require('path');
 const ejs = require('ejs');
 const themeInit = require('../commands/themeInit');
 const chalk = require('chalk');
 
-Spinner = CLI.Spinner;
-
-const spinner = new Spinner("Completing project setup. Please hold on, we're almost done!", ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']);
+const spinner = ora("Completing project setup. Please hold on, we're almost done!");
 class ComponentGenerator {
     constructor(components, projectName, architecture, tool, monorepoName) {
         this.components = components;

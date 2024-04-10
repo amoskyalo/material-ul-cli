@@ -1,8 +1,6 @@
 const fs = require('fs');
 const { logger } = require('../utils/logger')
 const promptInstall = require('./promptInstall');
-const CLI = require('clui');
-
 function validateMUI(action) {
     const packageJsonPath = "./package.json";
 

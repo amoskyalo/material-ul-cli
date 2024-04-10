@@ -5,8 +5,8 @@ const { program } = require('commander');
 const { logger } = require('./utils/logger');
 const { select, confirm, input, checkbox } = require('@inquirer/prompts');
 const { componentChoices } = require('./utils/constants');
-const CLI = require('clui');
 const boxen = require('boxen');
+const ora = require('ora');
 const themeInit = require('./commands/themeInit');
 const validateMUI = require('./utils/validateMaterial');
 const validateTheme = require('./commands/validateTheme');
@@ -14,9 +14,7 @@ const projectInit = require('./commands/projectInit');
 const monorepoInit = require('./commands/monorepoInit');
 const installComponent = require('./commands/installComponent');
 
-Spinner = CLI.Spinner;
-
-const lerna_spinner = new Spinner('Installing lerna...  ', ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']);
+const lerna_spinner = ora('Installing lerna...');
 
 program.version("0.0.1").description("Material UI CLI");
 
