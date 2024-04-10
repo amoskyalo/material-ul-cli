@@ -64,8 +64,8 @@ program.command('project-init')
             default: 'vite'
         });
 
-        const components = await checkbox({
-            message: "Which components would you like to scafold to your project? You can also install them later via the CLI.",
+        const install_components = await checkbox({
+            message: "Which components would you like to add?",
             choices: componentChoices,
             pageSize: 10
         });
@@ -77,6 +77,10 @@ program.command('project-init')
                 { name: "Poly repo", value: "poly-repo" }
             ]
         });
+
+        const MUISwitch = install_components.find(c => c.name === "MaterialUISwitch");
+
+        const components = MUISwitch ? install_components : [...install_components, { name: "MaterialUISwitch", category: "Switch" }]
 
         if (architecture === "mono-repo") {
             logger.info(boxen(`Since you've chosen a monorepo setup, we'll use Lerna to manage our packages. Lerna is ideal for monorepo management, simplifying tasks like versioning and publishing. Check out the docs: https://lerna.js.org/docs/getting-started`, { padding: 1 }))
