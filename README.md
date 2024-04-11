@@ -37,6 +37,10 @@ The Material-UI CLI is a powerful command-line interface tool designed to signif
 ## 📦 Installation
 
 ```sh
+npx material-cli@latest project-init
+
+#OR 
+
 npm i -g material-cli
 ```
 
