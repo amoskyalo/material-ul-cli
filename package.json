@@ -4,7 +4,7 @@
   "description": "Build Material UI apps 10x faster with material-ui-cli ⚡",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate:release": "npx changelogen@latest --release"
   },
   "bin": {
     "material-cli": "index.js"
